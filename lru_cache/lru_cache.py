@@ -34,6 +34,15 @@ class LRUCache:
             self.storage.move_to_end(node)
         else: 
             return
+          
+
+        # if key in self.cache:
+        #     # fetch the DLL node which is the value of this key
+        #     node = self.cache[key]
+        #     self.storage.move_to_end(node)
+        #     return node.value[1]
+        # else:
+        #     return None
 
     """
     Adds the given key-value pair to the cache. The newly-
@@ -46,6 +55,27 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
+          # check if the key is in the cache 
+        # if key in self.cache:
+        #     node = self.cache[key]
+        #     # overwrite the old value 
+        #     node.value = (key, value)
+        #     # move this node to the tail 
+        #     self.storage.move_to_end(node)
+        #     return
+        # if self.size == self.limit:
+        #     # first evict the least-recently used element
+        #     oldest_key = self.storage.head.value[0]
+        #     del self.cache[oldest_key]
+        #     # remove the head node from the DLL
+        #     self.storage.remove_from_head()
+        #     self.size -= 1
+        # # key is not in self.cache and we still have room in our cache
+        # # add the key and value
+        # self.storage.add_to_tail((key, value))
+        # self.cache[key] = self.storage.tail
+        # self.size += 1
+
         if key in self.cache:
             node = key, value
             print("node", node)
